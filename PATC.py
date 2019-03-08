@@ -105,7 +105,7 @@ class Ui_ContadordeTiempo(object):
 		fok = time.strftime("%d-%m-%y %H:%M:%S", time.localtime(f))
 		self.tfinal.setText(str(fok))
 
-		s = round(float(f) - float(i), 2)/60
+		s = round((float(f) - float(i))/60, 2)
 		self.cuenta.setText(str(s))
 
 
