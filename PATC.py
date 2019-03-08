@@ -31,11 +31,12 @@ s = 0
 class Ui_ContadordeTiempo(object):
 	def setupUi(self, ContadordeTiempo):
 		ContadordeTiempo.setObjectName("ContadordeTiempo")
-		ContadordeTiempo.resize(434, 122)
+		ContadordeTiempo.setFixedSize(434, 122)
 		
 		self.input = QtWidgets.QLineEdit(ContadordeTiempo)
 		self.input.setGeometry(QtCore.QRect(4, 80, 230, 26))
 		self.input.setObjectName("input")
+		self.input.setPlaceholderText("Ej1: vlc  Ej2:/usr/bin/vlc") 
 		
 		self.iniciar = QtWidgets.QPushButton(ContadordeTiempo)
 		self.iniciar.setGeometry(QtCore.QRect(250, 80, 80, 26))
@@ -58,18 +59,18 @@ class Ui_ContadordeTiempo(object):
 		self.label0.setObjectName("label0")
 		
 		self.label2 = QtWidgets.QLabel(ContadordeTiempo)
-		self.label2.setGeometry(QtCore.QRect(280, 10, 131, 18))
+		self.label2.setGeometry(QtCore.QRect(240, 10, 200, 18))
 		self.label2.setObjectName("label2")
 		
 		self.cuenta = QtWidgets.QLabel(ContadordeTiempo)
-		self.cuenta.setGeometry(QtCore.QRect(310, 40, 58, 18))
+		self.cuenta.setGeometry(QtCore.QRect(310, 40, 200, 18))
 		font = QtGui.QFont()
 		font.setPointSize(16)
 		self.cuenta.setFont(font)
 		self.cuenta.setTextFormat(QtCore.Qt.AutoText)
 		self.cuenta.setObjectName("cuenta")
 		self.tinicial = QtWidgets.QLabel(ContadordeTiempo)
-		self.tinicial.setGeometry(QtCore.QRect(110, 10, 120, 18))
+		self.tinicial.setGeometry(QtCore.QRect(110, 10, 150, 18))
 		self.tinicial.setObjectName("tinicial")
 		self.tfinal = QtWidgets.QLabel(ContadordeTiempo)
 		self.tfinal.setGeometry(QtCore.QRect(110, 30, 120, 18))
@@ -86,7 +87,7 @@ class Ui_ContadordeTiempo(object):
 		self.etiqueta.setText(_translate("ContadordeTiempo", "Inserte dirección del ejecutable:"))
 		self.label1.setText(_translate("ContadordeTiempo", "Inicio:"))
 		self.label0.setText(_translate("ContadordeTiempo", "Fin:"))
-		self.label2.setText(_translate("ContadordeTiempo", "Tiempo de Trabajo:"))
+		self.label2.setText(_translate("ContadordeTiempo", "Tiempo de Trabajo (Minutos):"))
 		self.cuenta.setText(_translate("ContadordeTiempo", "00:00"))
 		self.tinicial.setText(_translate("ContadordeTiempo", "00:00"))
 		self.tfinal.setText(_translate("ContadordeTiempo", "00:00"))
@@ -94,16 +95,26 @@ class Ui_ContadordeTiempo(object):
 	def Iniciar(self):
 		global i
 		i = round(time.time(), 2)
-		self.tinicial.setText(str(i))
+		iok = time.strftime("%d-%m-%y %H:%M:%S", time.localtime(i))
+		self.tinicial.setText(str(iok))
+
 		p = self.input.text()
 		x = os.system("'"+ p +"'")
+
 		f = round(time.time(), 2)
-		self.tfinal.setText(str(f))
-		s = round(float(f) - float(i), 2)
+		fok = time.strftime("%d-%m-%y %H:%M:%S", time.localtime(f))
+		self.tfinal.setText(str(fok))
+
+		s = round(float(f) - float(i), 2)/60
 		self.cuenta.setText(str(s))
-		print(f)
-		print(i)
-		print(s)
+
+
+
+
+
+
+
+
 
 
 
