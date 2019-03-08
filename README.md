@@ -1,7 +1,7 @@
 PYTHON_APP_TIME_COUNTER V0.1
 
 Esta herramienta es Open Source.
-Cualquiera puede usarla,ver el código, modificarla y redistribuirla, sin ninguna restrucción.
+Cualquiera puede usarla, ver el código, modificarla y redistribuirla, sin ninguna restricción.
 
 Herramienta para el control del tiempo que tenemos una aplicación específica activa.
 Solo necesita copiar la dirección del ejecutable de la aplicación en cuestión, y al
