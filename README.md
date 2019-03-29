@@ -1,4 +1,4 @@
-PYTHON_APP_TIME_COUNTER V0.1
+﻿PYTHON_APP_TIME_COUNTER V0.1
 
 Esta herramienta es Open Source.
 Cualquiera puede usarla, ver el código, modificarla y redistribuirla, sin ninguna restricción.
@@ -24,3 +24,4 @@ Por hacer:
 
 Por: Juan Antonio
 https://sirvaseusted.es
+asdasdasdasdasd
